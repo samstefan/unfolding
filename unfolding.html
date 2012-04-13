@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+
+	<!--
+	Unfolding Tumblr Theme
+	By Sam Stefan
+	http://photos.samstefan.co.uk - https://github.com/samstefan/Photography-Tumblr-Blog
+	-->
+
+	<title>{Title}</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{Favicon}" />
+
+	<!-- RSS -->
+	<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0" width="device-width"/>
+
+	<!-- Search Engine Stuff -->
+	{block:Description}<meta name="description" content="{MetaDescription}"/>{/block:Description}
+	<meta name="author" content="" />
+	<meta name="robots" content="all" />
+
+	<!-- Stylesheets -->
+	<link href="http://static.tumblr.com/ubkenek/AC4lyqj2u/boilerplate.css" rel="stylesheet" type="text/css" />
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="http://static.tumblr.com/gpln05e/ao8kyw205/jquery-1.4.2.min.js"></script>
+
+	<!-- TypeKit -->
+	<script type="text/javascript" src="http://use.typekit.com/yqz8hqj.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<style type="text/css">
+
+	/*========================================================
+		Basics Page Setup                                                                                 
+	========================================================*/		
+			
+	html, body {
+		background: white;
+		height: 100%;
+		color: #262525;
+		font-family: "ff-tisa-web-pro", Georgia, "Times New Roman", Serif;
+		font-size: 100%; /* 16px = 1em */ 
+		line-height: 1.5; }	
+		
+	.Content {
+		max-width: 69.5em; /* 1112px / 16px =  69.5em */
+		margin: 0 auto;
+		padding: 6.25em 1.25em 0; /* 100px / 16px = 6.25em */
+		clear: both; }
+	
+	.Clearfix:after { 
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0; }
+	
+	.Clearfix { display: inline-block; }
+	html[xmlns] .Clearfix { display: block; }
+	* html .Clearfix { height: 1%; }
+	
+	a:link, a:visited { color: #000; text-decoration: none; border-bottom: 1px solid black;  }
+	a:hover { border-bottom: 1px dotted #fff; }
+	
+	::selection { background: #ff8309;}
+	::-moz-selection { background: #ff8309; }
+			
+	.Post ul { margin-bottom: 5px; }
+	.Post li { list-style: disc; padding-left: 10px; margin: 0 0 5px 18px; }
+	
+	.Posts b, .Posts strong { font-weight: bold; }
+	.Posts em, .Posts i { font-style: italic; } 
+	
+	#tumblr_controls { top: 8px !important; right: 20px !important; }
+	
+	/*========================================================
+		Header
+	========================================================*/
+	
+	header {
+		width: 100%;
+		height: 2.625em; /* 42px / 16px = 2.625em */ 
+		position: fixed;
+		top: 0;
+		background: rgba(255,255,255,0.9);
+		border-bottom: 0.1875em solid #f9f9f9; /* 3px / 16px = 0.1875em */ }
+	
+	nav {
+		max-width: 69.5em; /* 1112px / 16px = 69.5em */
+		height: 2.625em; /* 42px / 16px = 2.625em */ 
+		margin: 0 auto;
+		padding: 0 1.25em; }
+	
+	.Line { 
+		width: 100%;
+		height: 0.0625em; /* 1px / 16px = 0.0625em */ 
+		display: block;
+		clear: both;
+		background: #e9e9e9; }
+	
+	h1, .Filters, .PorfileButton, .ArchiveButton {
+		height: 2.142857143em; /* 30px / 14px = 2.142857143em */
+		float: left;
+		clear: none;
+		padding: 0.857142857em 1.428571429em 0 0; /* 12px / 14px = 0.857142857em — 20px / 14px = 1.428571429em */
+		margin: 0 20px 0 0;
+		border-right: 0.071428571em solid #e9e9e9; /* 1px / 14px = 0.071428571em */
+		text-transform: uppercase;
+		font-size: 0.875em; /* 14px / 16px = 0.875em */
+		font-family: "proxima-nova", Helvetica, Arial, Sans-Serif;
+		letter-spacing: 3px; }
+		
+	h1 a:link, h1 a:visited, .ArchiveButton:link, .ArchiveButton:visited, .Social a:link, .Social a:visited { border-bottom: none; }
+	h1 a:hover { color: #a9a9a9; }
+	
+	.Line01 { 
+		width: 100%;
+		height: 1px;
+		display: none;
+		clear: both;
+		background: #e9e9e9; }
+	
+	.Filters { letter-spacing: 0; position: relative; z-index: 200; }
+	
+	.Filters span {
+		width: 10.5em; /* 147px / 14px = 10.5em */
+		float: left;
+		clear: both;
+		cursor: pointer;
+		font-weight: bold;
+		background: url(http://static.tumblr.com/ubkenek/B9Im2bv7r/down-arrow.png) no-repeat 140px 9px; }
+		
+	.Filters span:hover, .FiltersList a:hover { color: #a9a9a9; }
+	
+	.FiltersList {
+		width: 13.21428571em; /* 185px / 14px = 13.21428571 */
+		overflow: hidden;
+		float: left;
+		clear: both;
+		margin: 0.714285714em -1.428571429em 0 -1.428571429em; /* 10px / 14px = 0.714285714em — 20px / 14px = 1.428571429em */
+		font-weight: bold;
+		display: none;
+		background: white;
+		border-radius: 0 0 0.214285714em 0.214285714em; /* 3px / 14px = 0.214285714em */
+		border: 0.071428571em solid #d9d9d9; /* 1px / 14px = 0.071428571em */
+		border-top: none; }
+		
+	.FiltersList li {
+		width: 10.64285714em; /* 149px / 14px = 10.64285714em */
+		float: left;
+		clear: both;
+		padding: 0.5em 1.428571429em; /* 7px / 14px = 0.5em — 20px / 14px = 1.428571429em */
+		border-bottom: 0.071428571em solid #d9d9d9; } /* 1px / 14px = 0.071428571em */
+	
+	.FiltersList a:link, .FiltersList a:visited { border: none; }
+	
+	.FiltersList li:last-of-type { border: none; }
+	
+	.PorfileButton {
+		width: 1.285714286em; /* 18px / 14px = 1.285714286em */
+		cursor: pointer;
+		background: url(http://static.tumblr.com/ubkenek/xCEm2bvpa/profile-icon.png) no-repeat left; }
+		
+	.PorfileButton:hover, .ArchiveButton:hover { opacity: 0.5; }	
+	
+	.ArchiveButton { 
+		width: 23px; /* 23px / 14px = 1.642857143em */
+		background: url(http://static.tumblr.com/ubkenek/emYm2bw1t/archive-icon.png) no-repeat left; }
+	
+	.ProfileWrapper {
+		display: none;
+		max-width: 72em; /* 1200px / 16px = 72em */
+		margin: -0.625em auto 0; /* 10px / 16px = 0.625em */ }
+	
+	.ProfileBackgroundTop {
+		width: 11.875em; /* 190px / 16px = 11.875em */
+		height: 1em; /* 16px = 1em */
+		display: block;
+		position: relative;
+		z-index: 2;
+		margin: 0 0 -0.0625em 17.625em; /* 1px / 16px = 0.0625em — 264px / 16px = 16.5em */
+		background: url(http://static.tumblr.com/ubkenek/TGgm2bwvd/profile-background.png) center no-repeat; }
+	
+	.Profile {
+		width: 9.375em; /* 150px / 16px = 9.375em */
+		display: block;
+		margin: 0 0 0 17.625em; /* 282px / 16px = 17.625em */
+		padding: 1.25em 1.25em 0 1.25em; /* 20px / 16px = 1.25em */
+		background: white;
+		border: 0.0625em solid #d9d9d9; /* 1px / 16px = 0.0625em */
+		box-shadow: 0 0 20px rgba(0,0,0,0.2);
+		border-radius: 3px; }
+		
+	.ProfileDescription {
+		width: 11.53846154em; /* 150px / 16px = 11.53846154em */
+		clear: both;
+		text-align: center;
+		font-size: 0.8125em; /* 13px / 16px = 0.8125em */
+		margin: 1.538461538em 0; /* 20px / 13px = 1.538461538em */ }
+		
+	.Social {
+		width: 11.875em; /* 190px / 16px = 11.875emm */
+		height: 2.4375em; /* 190px / 16px = 2.4375em */
+		clear: both;
+		margin: 0 -1.25em; /* 20px / 16px = 1.25em */
+		border-top: 0.0625em solid #d9d9d9; /* 1px / 16px = 0.0625em */ }	
+		
+	.Social a:link, .Social a:visited {
+		float: left;
+		clear: none;
+		width: 5.692307692em; /* 74px / 13px = 5.692307692em */
+		padding: 0.769230769em; /* 10px / 13px = 0.769230769em */
+		
+		font-size: 0.8125em; /* 13px / 16px = 0.8125em */
+		font-weight: bold;
+		font-family: "proxima-nova", Helvetica, Arial, Sans-Serif;
+		text-transform: uppercase;
+		text-align: center; }
+		
+	.Social a:hover { color: #a9a9a9; }	
+	
+	.TwitterLink { border-right: 1px solid #d9d9d9; }
+	
+	/*========================================================
+		Body
+	========================================================*/
+
+	.PhotoPost { 
+		width: 100%;
+		float: left;
+		clear: both;
+		margin: 0 auto; }
+		
+	img.PhotoPostImage {
+		max-width: 100%;
+		display: block;
+		margin: 0 auto 1.25em; /* 20px / 16px = 1.25em */ }
+	
+	.Caption {
+		max-width: 100%;
+		clear: both;
+		margin: 0 0 1.25em; /* 20px / 16px = 1.25em */
+		text-align: center; }
+		
+	/*========================================================
+		Footer
+	========================================================*/
+	
+	.PostFooter {
+		max-width: 100%;
+		clear: both;
+		margin: 0 0 80px 0; 
+		font-size: 12px;
+		font-family: Arial, Helvetica, sans-serif;
+		text-align: center; }
+	
+	.PostFooter a:link, footer a:visited, footer a:link, footer a:visited { color: #a9a9a9; border-bottom: 1px solid #a9a9a9; }
+	.PostFooter a:hover, footer a:hover { border-bottom: none; }
+	
+	.note { width: 960px; color: #a9a9a9; font-family: Arial, Helvetica, sans-serif; list-style: none; font-size: 12px; clear: both; text-align: center; }
+	.note a:link, .note a:visited { color: #a9a9a9; border-bottom: 1px solid #a9a9a9; }
+	.note a:hover { border-bottom: none; }
+	ol.notes li.note { padding: 10px 0px 10px 0px; }
+	ol.notes li.note img.avatar { display: none; }
+	ol.notes li.note blockquote { padding: 4px 10px; margin: 10px 0px 0px 25px; }
+	
+	.FooterWrapper {
+		width: 100%;
+		padding: 0 0 20px 0;
+		color: #a9a9a9;
+		border-top: 0.1875em solid #f9f9f9; }
+	
+	footer {
+		max-width: 69.5em; /* 1112px / 16px =  69.5em */
+		margin: 20px auto 0;
+		padding: 0 1.25em 0; /* 100px / 16px = 6.25em */
+		clear: both;
+		text-align: center;
+		font-size: 12px;
+		font-family: Arial, Helvetica, sans-serif; }
+	
+	/*========================================================
+		Pagination
+	========================================================*/
+		
+	.Pagination { 
+		max-width: 96.5277777%;
+		margin: 0 1.25em 80px;
+		padding: 0 0 20px 0;
+		font-family: Arial, Helvetica, sans-serif; }
+	
+	.Pagination a:link, .Pagination a:visited { border: none; }
+	.Pagination a:hover { color: #a9a9a9; }
+	
+	.Next { float: right; clear: none; }
+	.Back { float: left; clear: none; }
+	
+	/*========================================================
+		View Ports
+	========================================================*/
+
+	@media all and (max-width: 850px) and (min-width: 0px) {
+		nav { max-width: 29.5em; /* 1112px / 16px = 29.5em */ }
+		#tumblr_controls { display: none !important; } 
+		.ProfileBackgroundTop{ margin: 0 0 -0.0625em 22.3125em; /* 1px / 16px = 0.0625em — 357px / 16px = 22.3125em */ }
+		.Profile {	margin: 0 0 0 22.3125em; /* 357px / 16px = 17.625em */ }
+	}
+
+	@media all and (max-width: 511px) and (min-width: 0px) {
+		header { height: 5.3125em; }
+		nav { height: 5.3125em; }
+		h1 { padding: 0.857142857em 1.5em 0 0; }
+		.Line01 { display: block; margin: 0 -20px } 
+		.Row01 { width: 330px; margin: 0 auto; display: block; clear: both; }
+		.Row02 { width: 123px; margin: 0 auto; display: block; clear: both; }
+		.Filters { margin: 0; border-right: none; }
+		.ArchiveButton { border-right: none; }
+	}
+	
+	/*========================================================
+		Custom CSS
+	========================================================*/					
+			
+	{CustomCSS}
+				
+	</style>
+	<!-- End of CSS -->
+	
+	<script type="text/javascript">
+		function ProfilePoistion() {
+		
+			var HeaderWidth = $('header').width();
+			var NewProfilePoistion = HeaderWidth / 2 - 190 + 217;
+		
+			if ( HeaderWidth < 850 ) {	
+				$('.ProfileBackgroundTop').css( 'margin-left', NewProfilePoistion );
+				$('.Profile').css( 'margin-left', NewProfilePoistion );
+			}
+			
+			if ( HeaderWidth < 511 ) {
+			
+				NewProfilePoistion = NewProfilePoistion - 217 + 42;
+			
+				$('.ProfileBackgroundTop').css( 'margin-left', NewProfilePoistion );
+				$('.Profile').css( 'margin-left', NewProfilePoistion );
+				$('.Line01').css( 'width', HeaderWidth );
+			} 
+		
+			if ( HeaderWidth > 850 ) {
+				$('.ProfileBackgroundTop').css( 'margin-left', '282px' );
+				$('.Profile').css( 'margin-left', '282px' );
+			}
+
+		}
+	
+		$(document).ready(function() {
+			
+			$('.PorfileButton').click(function() {
+				$('.ProfileWrapper').toggle();
+			});
+			
+			$('.Filters span').click(function() {
+				$('.FiltersList').toggle();
+			});
+			
+			ProfilePoistion();
+			
+		});
+		
+		$(window).resize(function() {
+			ProfilePoistion();
+		});
+		
+	</script>
+
+</head><!-- End Head -->
+
+<body>
+
+	<header>
+		<nav>
+		
+			<div class="Row01">
+				<h1><a href="http://photos.samstefan.co.uk" title="Home">Photo Blog</a></h1>
+			
+				<div class="Filters">
+					<span>Filters</span>
+					<ul class="FiltersList">
+						<li><a href="http://photos.samstefan.co.uk">Latest</a></li>
+						<li><a href="/tagged/35mm">35mm Film</a></li>
+						<li><a href="/tagged/people">People</a></li>
+					</ul>
+				</div>
+			</div><!-- End Row 01 -->
+			
+			<span class="Line01"></span>
+
+			<div class="Row02">
+				<div class="PorfileButton"></div>
+				<a class="ArchiveButton" href="/archive" title="Archive"></a>
+			</div><!-- End Row 02 -->
+			
+		</nav><!-- End Navigation -->
+		<span class="Line"></span>
+		<div class="ProfileWrapper">
+			<span class="ProfileBackgroundTop"></span>
+			<div class="Profile">
+				<img src="http://static.tumblr.com/ubkenek/LJfm2by74/profile-icon.jpg"/>
+				{block:Description}<div class="ProfileDescription">{Description}</div>{/block:Description}
+				<div class="Social">
+					<a class="TwitterLink" href="http://twitter.com/samstefan" title="Sam Stefan's Twitter">Twitter</a>
+					<a class="WebsiteLink" href="http://samstefan.co.uk" title="My Website">Website</a>
+				</div>
+			</div>
+		</div>
+	</header><!-- End Header -->
+
+	<section class="Content">
+		<section class="Posts">
+		{block:Posts}
+				
+			{block:Photo}
+			<article class="PhotoPost">
+				{block:HighRes}<img class="PhotoPostImage" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{/block:HighRes}
+						
+				{block:Caption}
+				<div class="Caption">
+					{Caption}
+				</div><!-- End Caption -->
+				{/block:Caption}
+												
+			</article><!-- End Photo Post -->
+			{block:Photo}
+				
+			<div class="PostFooter">
+				{block:Date}<a href="{Permalink}">Posted on {DayOfWeek} {DayOfMonth} {Month} {Year}
+				{block:NoteCount} &bull; {NoteCountWithLabel}{/block:NoteCount}</a>{/block:Date}
+			</div><!-- End Post Footer -->
+					
+			{PostNotes}
+			
+		{/block:Posts}
+		</section><!-- End Posts -->
+		
+		<div class="Pagination">
+			{block:NextPage}
+			<div class="Next">
+				<a href="{NextPage}" title="Go to the next page">Next &#8594;</a>
+			</div><!-- End Next Page Button -->
+			{/block:NextPage}
+			
+			{block:PreviousPage}
+			<div class="Back">
+				<a href="{PreviousPage}" title="Go to the previous page">&#8592; Back</a>
+			</div><!-- End Back Page Button -->
+			{/block:PreviousPage}
+		</div><!-- End Pagination -->
+
+	</section><!-- End Content -->
+	
+	
+	<div class="FooterWrapper">
+		<span class="Line"></span>
+		<footer>
+			Powered by <a href="http://tumblr.com">Tumblr</a>
+			using the <a href="https://github.com/samstefan/Photography-Tumblr-Blog" title="Unfolding Theme">Unfolding</a> theme 
+			by <a href="http://samstefan.co.uk" title="Sam Stefan">Sam Stefan</a>.
+		</footer><!-- End Footer -->
+	</div><!-- End Footer Wrapper -->
+</body>
+</html>
