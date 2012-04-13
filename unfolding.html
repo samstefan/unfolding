@@ -440,7 +440,7 @@
 			{block:Photo}
 			<article class="PhotoPost">
 				{block:HighRes}<img class="PhotoPostImage" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{/block:HighRes}
-						
+				
 				{block:Caption}
 				<div class="Caption">
 					{Caption}
@@ -449,6 +449,24 @@
 												
 			</article><!-- End Photo Post -->
 			{block:Photo}
+				
+			{block:Photoset}
+			<article class="PhotoPost">
+						
+				{block:Photos}
+  					{block:HighRes}
+  						<img class="PhotoPostImage" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+  					{/block:HighRes}
+				{/block:Photos}	
+											
+				{block:Caption}
+				<div class="Caption">
+					{Caption}
+				</div><!-- End Caption -->
+				{/block:Caption}
+												
+			</article><!-- End Photoset Post -->
+			{/block:Photoset}
 				
 			<div class="PostFooter">
 				{block:Date}<a href="{Permalink}">Posted on {DayOfWeek} {DayOfMonth} {Month} {Year}
