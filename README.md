@@ -14,7 +14,7 @@ Unfolding is a responsive photography theme for the bloging platform [Tumblr](ht
 
 ## How to use
 
-Copy ['unfolding.html'](https://raw.github.com/samstefan/Photography-Tumblr-Blog/master/unfolding.html) source into the custom html box under 'Customise appearance' within Tumblr.
+Copy ['unfolding.html'](https://raw.github.com/samstefan/Unfolding/master/unfolding.html) source into the custom html box under 'Customise appearance' within Tumblr.
 
 ## Licence
 
